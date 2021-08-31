@@ -1,6 +1,10 @@
-# WeaponAnimationMenu
+# Need Support?
+<a href="https://discord.gg/Z9Mxu72zZ6">
+  <img src="https://invidget.switchblade.xyz/Z9Mxu72zZ6" />
+</a>
 
-New release! Thank you all for the positive feedback lately this is one of the few scripts that I created a while back but forgot to release. I'm now releasing it with some changes I did, like a config file so you can set it up easily and customize it. You can change your aim animation and the animation when you pull out a weapon. Anyways enjoy this and look out for some more stuff soon!
+# Description
+You can change your aim animation and the animation when you pull out a weapon. Enjoy this and look out for some more stuff soon!
 
 # Features
 * Gangster & hillbilly aim animations.
@@ -14,9 +18,4 @@ https://i.imgur.com/6XjAE4W.png
 https://youtu.be/wa-NdchOVhg
 
 # Forum Post
-
-
-# Need Support?
-<a href="https://discord.gg/Z9Mxu72zZ6">
-  <img src="https://invidget.switchblade.xyz/Z9Mxu72zZ6" />
-</a>
+https://forum.cfx.re/t/release-free-advanced-weapon-animation-menu/4748839?u=andyyyyy
