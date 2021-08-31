@@ -21,13 +21,13 @@ MainMenu = NativeUI.CreateMenu()
 function Menu()
     local MenuTitle = ""
     if Config.MenuTitle == 0 then
-        MenuTitle = "Weapon animatoins"
+        MenuTitle = "Weapon animations"
     elseif Config.MenuTitle == 1 then
         MenuTitle = GetPlayerName(source)
     elseif Config.MenuTitle == 2 then
         MenuTitle = Config.MenuTitleCustom
     else
-        MenuTitle = "Weapon animatoins"
+        MenuTitle = "Weapon animations"
     end
 
 	_MenuPool:Remove()
@@ -68,9 +68,9 @@ function Menu()
     HolsterStyleMenu:SetMenuWidthOffset(Config.MenuWidth)
     local DefaultHolsterStyle = NativeUI.CreateItem("Default animation", "")
     local SideHolsterStyle = NativeUI.CreateItem("Draw from belt holster", "")
-    local SideLegHolsterStyle = NativeUI.CreateItem("Draw from Leg holster", "")
+    local SideLegHolsterStyle = NativeUI.CreateItem("Draw from leg holster", "")
     local FrontHolsterStyle = NativeUI.CreateItem("Draw from front", "")
-    local AgressiveFrontHolsterStyle = NativeUI.CreateItem("Draw from front Agressive", "")
+    local AgressiveFrontHolsterStyle = NativeUI.CreateItem("Draw from front agressive", "")
     local BackHolsterStyle = NativeUI.CreateItem("Draw from back", "")
     HolsterStyleMenu:AddItem(DefaultHolsterStyle)
     HolsterStyleMenu:AddItem(SideHolsterStyle)
