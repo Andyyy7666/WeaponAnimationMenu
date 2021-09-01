@@ -185,31 +185,37 @@ CreateThread(function()
     while true do
         Citizen.Wait(80)
 
+        inVeh = IsPedInVehicle(PlayerPedId(-1), GetVehiclePedIsIn(PlayerPedId(-1), false), false)
+        
         if GangsterAS == true then
             local ped = PlayerPedId(), DecorGetInt(PlayerPedId())
             local _, hash = GetCurrentPedWeapon(ped, 1)
-            loadAnimDict2("combat@aim_variations@1h@gang")
-            if IsPlayerFreeAiming(PlayerId()) or (IsControlPressed(0, 24) and GetAmmoInClip(ped, hash) > 0) then
-                if not IsEntityPlayingAnim(ped, "combat@aim_variations@1h@gang", "aim_variation_a", 3) then
-                    TaskPlayAnim(ped, "combat@aim_variations@1h@gang", "aim_variation_a", 8.0, -8.0, -1, 49, 0, 0, 0, 0)
-                    SetEnableHandcuffs(ped, true)
+            if not inVeh then
+                loadAnimDict2("combat@aim_variations@1h@gang")
+                if IsPlayerFreeAiming(PlayerId()) or (IsControlPressed(0, 24) and GetAmmoInClip(ped, hash) > 0) then
+                    if not IsEntityPlayingAnim(ped, "combat@aim_variations@1h@gang", "aim_variation_a", 3) then
+                        TaskPlayAnim(ped, "combat@aim_variations@1h@gang", "aim_variation_a", 8.0, -8.0, -1, 49, 0, 0, 0, 0)
+                        SetEnableHandcuffs(ped, true)
+                    end
+                elseif IsEntityPlayingAnim(ped, "combat@aim_variations@1h@gang", "aim_variation_a", 3) then
+                    ClearPedTasks(ped)
+                    SetEnableHandcuffs(ped, false)
                 end
-            elseif IsEntityPlayingAnim(ped, "combat@aim_variations@1h@gang", "aim_variation_a", 3) then
-                ClearPedTasks(ped)
-                SetEnableHandcuffs(ped, false)
             end
         elseif HillbillyAS == true then
             local ped = PlayerPedId(), DecorGetInt(PlayerPedId())
             local _, hash = GetCurrentPedWeapon(ped, 1)
-            loadAnimDict2("combat@aim_variations@1h@hillbilly")
-            if IsPlayerFreeAiming(PlayerId()) or (IsControlPressed(0, 24) and GetAmmoInClip(ped, hash) > 0) then
-                if not IsEntityPlayingAnim(ped, "combat@aim_variations@1h@hillbilly", "aim_variation_a", 3) then
-                    TaskPlayAnim(ped, "combat@aim_variations@1h@hillbilly", "aim_variation_a", 8.0, -8.0, -1, 49, 0, 0, 0, 0)
-                    SetEnableHandcuffs(ped, true)
+            if not inVeh then
+                loadAnimDict2("combat@aim_variations@1h@hillbilly")
+                if IsPlayerFreeAiming(PlayerId()) or (IsControlPressed(0, 24) and GetAmmoInClip(ped, hash) > 0) then
+                    if not IsEntityPlayingAnim(ped, "combat@aim_variations@1h@hillbilly", "aim_variation_a", 3) then
+                        TaskPlayAnim(ped, "combat@aim_variations@1h@hillbilly", "aim_variation_a", 8.0, -8.0, -1, 49, 0, 0, 0, 0)
+                        SetEnableHandcuffs(ped, true)
+                    end
+                elseif IsEntityPlayingAnim(ped, "combat@aim_variations@1h@hillbilly", "aim_variation_a", 3) then
+                    ClearPedTasks(ped)
+                    SetEnableHandcuffs(ped, false)
                 end
-            elseif IsEntityPlayingAnim(ped, "combat@aim_variations@1h@hillbilly", "aim_variation_a", 3) then
-                ClearPedTasks(ped)
-                SetEnableHandcuffs(ped, false)
             end
         end
     end
